@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    padding: 2rem;
+}
+
+.grid{
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+}
+
+.petCard{
+    list-style: none;
+    height: 50vh;
+    width: 18vw;
+    box-shadow: 0 0 1rem #000000b4;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+}
+
+.petCard > article{
+    height: 100%;
+}
+
+.petCard__imageSection{
+    height: 65%;
+}
+
+.petCard__image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.petCard__textSection{
+    height: 33%;
+    width: 90%;
+    padding-top: 10px;
+    margin: auto;
+}
+
+.petCard__title{
+    text-align: center;
+}
+
+.petCard__attributes{
+    width: fit-content;
+    margin: auto;
+}
+
+.petCard__attributes > li{
+    padding: 2px;
+}
+
+.sep-bar{
+    width: 100%;
+    height: 2%;
+    background-color: blue;
+}
