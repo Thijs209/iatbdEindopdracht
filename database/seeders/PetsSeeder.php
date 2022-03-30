@@ -19,14 +19,14 @@ class PetsSeeder extends Seeder
             'petType' => 'Hond',
             'ownerName' => 'Thijs',
             'image' => '/img/casper.jpg',
-            'description' => 'Dit is Casper, hij is een epagnol breton en we hebben hem 8 jaar geleden geadopteerd uit het asiel.',
+            'description' => 'Dit is Casper.',
             'breed' => 'Epagnol Breton',
             'startDate' => '2022-08-02',
             'endDate' => '2022-08-09',
         ]);
 
         DB::table('pets')->insert([
-            'petName' => 'Defie',
+            'petName' => 'Snuf',
             'petType' => 'Hond',
             'ownerName' => 'Jan',
             'image' => '/img/defie.jpg',

@@ -4,10 +4,10 @@
 @endsection
 
 @section('content')
-    <ul class="grid">
+    <ul id="petCardGrid" class="petCardGrid">
         @foreach ($pets as $pet)
         <li class="petCard">
-            <article>
+            <a href="/pets/{{$pet->id}}">
                 <figure class="petCard__imageSection">
                     <img class="petCard__image" src="{{$pet->image}}">
                 </figure>
@@ -23,8 +23,11 @@
                         <li>{{$pet->startDate}} - {{$pet->endDate}}</li>
                     </ul>
                 </section>
-            </article>
+            </a>
         </li>
         @endforeach
     </ul>
+    <aside id="sidebar" class="sidebar">
+        <button id="sidebarButton">open/close</button>
+    </aside>
 @endsection
