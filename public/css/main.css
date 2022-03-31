@@ -209,10 +209,10 @@ body{
 
 .profile__images-column{
     margin-top: 1rem;
-    overflow-x:scroll;
     width: 100%;
     display: flex;
     gap: 0.5rem;
+    overflow-x:scroll;
 }
 
 .profile__column-figure{
