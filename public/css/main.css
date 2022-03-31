@@ -48,21 +48,61 @@ body{
 }
 
 .header__navbar{
-    display: flex;
     background-color: rgb(243, 243, 243);
     width: 100%;
     height: 50%;
     padding: 1rem;
 }
 
-.header__navbar > ul{
+.header__navlist{
     list-style: none;
-    display: inline-block;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100%;
+    height: 100%;
+    justify-items: center; 
+    align-items: center;
 }
 
 .header__navigation{
+    height: fit-content;
+    width: fit-content;
+}
+
+.header__navigationlink{
     color: black;
     text-decoration: none;
+    text-align: center;
+    height: fit-content;
+    width: fit-content;
+}
+
+.header__navigationlink > svg{
+    height: 3rem;
+}
+
+.sidebar{
+    height: 100vh;
+    width: 20vw;
+    box-shadow: 0 0 1.5rem #000000b4;
+    position: fixed;
+    left: 0;
+    top: 15vh;
+    transition: 0.3s;
+    display: flex;
+    justify-content: end;
+}
+
+.sidebar__button{
+    width: 10%;
+    height: 95%;
+    align-self: center;
+    background-color: rgb(250, 250, 250);
+    border: none;
+}
+
+.sidebar__button:hover{
+    cursor: pointer;
 }
 
 .petCardGrid{
@@ -125,21 +165,75 @@ body{
     padding: 2px;
 }
 
-.sidebar{
-    height: 100vh;
-    width: 20vw;
-    box-shadow: 0 0 1.5rem #000000b4;
-    position: fixed;
-    left: 0;
-    top: 16vh;
-    transition: 0.3s;
-    display: flex;
-    justify-content: end;
+.profile{
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: 100%;
+    height: 100%;
+    align-items: center;
+    justify-items: center;
 }
 
-.sidebar__button{
-    width: 10%;
-    background-color: white;
+.profile__images{
+    width: 100%;
+    height: 45vh;
+}
+
+.profile__figure{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: none;
+}
+
+.profile__image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile__button-right, .profile__button-left{
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+}
+
+.profile__button-left{
+    left: 0;
+}
+
+.profile__button-right{
+    right: 0;
+}
+
+.profile__images-column{
+    margin-top: 1rem;
+    overflow-x:scroll;
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.profile__column-figure{
+    width: 30rem;
+}
+
+.profile__column-image{
+    width: 100%;
+}
+
+.profile__info{
+    height: fit-content;
+}
+
+.profile__title{
+    text-align: center;
+    font-size: 150%;
+}
+
+.profile__description{
+    margin-top: 1rem;
 }
 
 .sep-bar{
