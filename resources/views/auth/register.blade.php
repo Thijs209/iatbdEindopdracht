@@ -1,4 +1,4 @@
-<x-guest-layout>
+{{-- <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
@@ -56,4 +56,68 @@
             </div>
         </form>
     </x-auth-card>
-</x-guest-layout>
+</x-guest-layout> --}}
+@extends('default')
+@section('title')
+    Register
+@endsection
+
+@section('header')
+<x-auth-validation-errors class="mb-4" :errors="$errors" />
+
+<article class="auth">
+    <section class="logo">
+        <figure class="auth__figure">
+            <img class="auth__img" src="/img/logo.png" alt="">
+        </figure>
+        <div class="sep-bar"></div>
+    </section>
+    <form method="POST" class="auth__form" action="{{ route('register') }}">
+    
+        @csrf
+    
+        <!-- Name -->
+        <section class="auth__input-section">
+            <x-label for="name" :value="__('Naam')" />
+        
+            <x-input id="name" class="auth__text-input" type="text" name="name" :value="old('name')" required autofocus />
+        </section>
+    
+        <!-- Email Address -->
+        <section class="auth__input-section">
+            <x-label for="email" :value="__('Email')" />
+        
+            <x-input id="email" class="auth__text-input" type="email" name="email" :value="old('email')" required />
+        </section>
+    
+        <!-- Password -->
+        <section class="auth__input-section">
+            <x-label for="password" :value="__('Wachtwoord')" />
+        
+            <x-input id="password" class="auth__text-input"
+                            type="password"
+                            name="password"
+                            required autocomplete="new-password" />
+        </section>
+    
+        <!-- Confirm Password -->
+        <section class="auth__input-section">
+            <x-label for="password_confirmation" :value="__('Bevestig Wachtwoord')" />
+        
+            <x-input id="password_confirmation" class="auth__text-input"
+                            type="password"
+                            name="password_confirmation" required />
+        </section>
+    
+        <section class="auth__input-section">
+            <x-button class="auth__button">
+                {{ __('Registreer') }}
+            </x-button>
+            <a class="auth__text-button" href="{{ route('login') }}">
+                {{ __('Al geregistreerd?') }}
+            </a>
+        </section>
+    </form>
+    <div class="sep-bar bottom-radius"></div>
+</article>
+@endsection

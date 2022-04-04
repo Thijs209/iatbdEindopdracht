@@ -1,4 +1,4 @@
-@extends('default')
+@extends('components.header')
 @section('title')
     {{$user->name}}
 @endsection

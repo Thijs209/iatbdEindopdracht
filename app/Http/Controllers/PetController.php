@@ -18,4 +18,9 @@ class PetController extends Controller
     {
         return view('pets.index', ['pets' => Pet::all()]);
     }
+
+    public function home()
+    {
+        return view('welcome', ['pets' => Pet::all()]);
+    }
 }

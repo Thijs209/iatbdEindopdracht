@@ -1,4 +1,4 @@
-@extends('default')
+@extends('components.header')
 @section('title')
     {{$pet->petName}}
 @endsection

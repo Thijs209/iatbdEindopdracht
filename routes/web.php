@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\PetController::class, 'home']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -25,9 +23,4 @@ Route::get('/pets/{id}', [\App\Http\Controllers\PetController::class, 'show']);
 Route::get('/pets', [\App\Http\Controllers\PetController::class, 'index']);
 
 Route::get('/profile/{id}', [\App\Http\Controllers\UserController::class, 'show']);
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
 require __DIR__.'/auth.php';

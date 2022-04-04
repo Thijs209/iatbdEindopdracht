@@ -3,12 +3,18 @@ const sidebarButton = document.getElementById("sidebarButton");
 const sidebar = document.getElementById("sidebar");
 const petsGrid = document.getElementById("petCardGrid");
 
-//slideshow vars
+//profile slideshow vars
 const images = document.getElementsByClassName('profile__figure');
 const buttonLeft = document.getElementById("left");
 const buttonRight = document.getElementById("right");
-let imageDisplay = 0;
 const columnImages = document.getElementsByClassName('profile__column-image')
+
+//homepage slideshow vars
+const mainImages =  document.getElementsByClassName("homepage__pet-figure")
+
+//slideshow vars
+let imageDisplay = 0;
+let previous;
 if(images.length != 0){
     images[imageDisplay].style.display = 'block';
     changeColumnFocus(0)
@@ -32,36 +38,18 @@ if (sidebarButton != null) {
     }
 }
 
-//slideshow gallery
+//slideshow profile
 if (buttonLeft!=null){
     buttonLeft.onclick = () => {
-        console.log(imageDisplay)
-        images[imageDisplay].style.display = 'none';
-        let previous = imageDisplay;
-        if(imageDisplay == 0){
-            imageDisplay = images.length-1;
-        } else{
-            imageDisplay--;
-        }
-        images[imageDisplay].style.display = 'block';
-        console.log(imageDisplay)
-        changeColumnFocus(previous)
+        nextPicture(-1, images);
+        changeColumnFocus(previous);
     }
 }
 
 if (buttonRight!=null){
     buttonRight.onclick = () => {
-        console.log(imageDisplay)
-        images[imageDisplay].style.display = 'none';
-        let previous = imageDisplay;
-        if(imageDisplay == images.length-1){
-            imageDisplay = 0;
-        } else{
-            imageDisplay++;
-        }
-        images[imageDisplay].style.display = 'block';
-        console.log(buttonRight)
-        changeColumnFocus(previous)
+        nextPicture(+1, images);
+        changeColumnFocus(previous);
     }
 }
 
@@ -70,7 +58,7 @@ if (columnImages.length!=0){
         const columnImage = columnImages[i];
         columnImage.onclick = () => {
             images[imageDisplay].style.display = 'none';
-            let previous = imageDisplay;
+            previous = imageDisplay;
             imageDisplay = i
             images[imageDisplay].style.display = 'block';
             changeColumnFocus(previous)
@@ -81,4 +69,23 @@ if (columnImages.length!=0){
 function changeColumnFocus(previous){
     columnImages[previous].style.border = ""
     columnImages[imageDisplay].style.border = "black 3px solid"
+}
+
+//slideshow homepage
+if (mainImages.length != 0){
+    mainImages[imageDisplay].style.display = 'block';
+    setInterval(function() {nextPicture(1, mainImages)}, 10000)
+}
+
+function nextPicture(move, imageList){
+    imageList[imageDisplay].style.display = 'none';
+    previous = imageDisplay;
+    if(imageDisplay == imageList.length-1){
+        imageDisplay = 0;
+    } else if(imageDisplay == 0){
+        imageDisplay = imageList.length-1
+    } else{
+        imageDisplay += move;
+    }
+    imageList[imageDisplay].style.display = 'block';
 }
