@@ -6,7 +6,7 @@
         <section class="header__logo">
             <a href="/pets">
                 <figure class="header__figure">
-                    <img class="header__image" src="/img/logo.png">
+                    <img class="header__image" src="/img/icons/logo.png">
                 </figure>
             </a>
         </section>
@@ -18,8 +18,8 @@
         </section>
     </section>
     <div class="sep-bar"></div>
-    @yield('body')
 </article>
+@yield('body')
 <section class="content">
     @yield('content')
 </section>

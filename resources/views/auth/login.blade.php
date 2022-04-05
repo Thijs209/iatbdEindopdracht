@@ -9,7 +9,7 @@
 <article class="auth">
     <section class="logo">
         <figure class="auth__figure">
-            <img class="auth__img" src="/img/logo.png" alt="">
+            <img class="auth__img" src="/img/icons/logo.png" alt="">
         </figure>
         <div class="sep-bar"></div>
     </section>

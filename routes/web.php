@@ -19,8 +19,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/pets/{id}', [\App\Http\Controllers\PetController::class, 'show']);
+Route::get('/pets/show/{id}', [\App\Http\Controllers\PetController::class, 'show']);
+Route::get('/pets/{Animal}',  [\App\Http\Controllers\PetController::class, 'index']);
 Route::get('/pets', [\App\Http\Controllers\PetController::class, 'index']);
 
 Route::get('/profile/{id}', [\App\Http\Controllers\UserController::class, 'show']);
+
 require __DIR__.'/auth.php';

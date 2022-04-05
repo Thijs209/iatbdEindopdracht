@@ -21,9 +21,11 @@ class CreatePetsTable extends Migration
             $table->string('ownerName');
             $table->string('image');
             $table->string('description');
-            $table->string('breed');
+            $table->string('breed')->nullable();
             $table->date("startDate");
             $table->date('endDate');
+            $table->integer('payment');
+            $table->string('important')->nullable();
         });
     }
 
