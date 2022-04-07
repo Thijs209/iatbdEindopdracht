@@ -14,7 +14,7 @@ class AddForeignKeyToPetsImagesTable extends Migration
     public function up()
     {
         Schema::table('pets_images', function (Blueprint $table) {
-            $table->foreign('petId')->references('id')->on('pets');
+            $table->foreign('petId')->references('petId')->on('pets');
         });
     }
 

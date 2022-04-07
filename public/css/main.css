@@ -12,6 +12,22 @@ body{
     overflow-x: hidden;
 }
 
+h1{
+    font-size: 150%;
+}
+
+p{
+    font-size: 130%;
+}
+
+li{
+    font-size: 115%;
+}
+
+label{
+    font-size: 115%;
+}
+
 .content{
     padding: 3rem 2rem;
 }
@@ -93,13 +109,22 @@ body{
     margin-top: -3rem;
     margin-bottom: -3rem;
     height: 100vh;
-    width: 20vw;
+    width: 20rem;
     box-shadow: 0 0 1.5rem #000000b4;
     top: 0;
     position: sticky;
     transition: 0.3s;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    background-color: white;
+}
+
+.filter__button{
+    display: none;
+}
+
+#closeSidebar{
+    display: none;
 }
 
 .sidebar__header{
@@ -117,39 +142,34 @@ body{
 }
 
 .sidebar__filters{
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
     width: 100%;
 }
 
 .sidebar__text-input-section{
     display: flex;
-    flex-direction: column;
-    width: 40%;
-    margin-left: 1rem;
+    width: 8rem;
+    margin-left: 1.5rem;
     padding: 1rem 0;
-}
-
-.sidebar__text-input-section > label{
-    font-size: 120%;
-    font-weight: 700;
-    margin-left: 0.5rem;
+    align-items: center;
 }
 
 .sidebar__text-input{
     padding: 0.5rem;
     font-size: 120%;
     border-radius: 30px;
+    width: 100%;
 }
 
-.sidebar__filters-list{
+.sidebar__list{
     display: flex;
     flex-direction: column;
+    margin-top: 0.5rem;
     gap: 0.5rem;
 }
 
 .sidebar__filter{
     margin-left: 1.5rem;
-    color: red;
 }
 
 .sidebar__button{
@@ -172,7 +192,8 @@ body{
 .petCardGrid{
     display: flex;
     flex-wrap: wrap;
-    width: 80%;
+    justify-content: center;
+    width: 100%;
     gap: 2rem;
     transition: 0.3s;
 }
@@ -181,7 +202,7 @@ body{
     transition: 0.3s;
     list-style: none;
     height: 50vh;
-    width: 21.5vw;
+    width: 20rem;
     box-shadow: 0 0 1rem #000000b4;
     border-bottom-left-radius: 10%;
     border-bottom-right-radius: 10%;
@@ -413,7 +434,6 @@ body{
 .homepage__pet-figure{
     margin: auto;
     height: 100%;
-    width: 95%;
     transition: 1s;
     padding: 1rem;
 }
@@ -436,15 +456,35 @@ body{
     border-radius: 10px;
 }
 
-.homepage__animal-list{
+.homepage__animals{
+    margin-top: 1rem;
+    padding: 0.5rem;
+    height: 6rem;
     background-color: var(--blue);
+    border-radius: 35px;
+}
+
+.homepage__animals-title{
+    width: fit-content;
+    margin: auto;
+    color: white;
+    text-decoration: underline white;
+}
+
+.homepage__animals-title > a{
+    width: fit-content;
+    margin: auto;
+    color: white;
+    text-decoration: underline white;
+}
+
+.homepage__animal-list{
     margin: auto;
     display: flex;
     gap: 2rem;
     margin-top: 1rem;
-    padding: 1.5rem;
-    border-radius: 35px;
     justify-content: space-evenly;
+    height: 50%;
 }
 
 .homepage__animal{
@@ -455,48 +495,71 @@ body{
     color: white;
 }
 
-.homepage__cards{
-    margin-top: 2rem;
+.homepage__main{
+    height: 50vh;
+    width: 100%;
     display: flex;
-    gap: 10rem;
-    justify-content: center;
-}
-
-.homepage__card{
-    width: 35%;
-    border-radius: 10px;
-    box-shadow: 0 0 1rem black;
-}
-
-.homepage__heading{
-    background-color: var(--lightBlue);
-    padding: 0.5rem 0;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    height: 15%;
-}
-
-.homepage__heading-title{
-    font-size: 150%;
-    text-align: center;
-}
-
-.homepage__card-content{
+    gap: 2rem;
     padding: 2rem;
 }
 
-.homepage__card-text{
+.homepage__create-account, .homepage__upload-pet{
+    padding: 2.5rem;
+    border-radius: 10px;
+    width: 100%;
+    box-shadow: 0 0 2rem black;
+    position: relative;
+}
+
+.homepage__create-account{
+    height: 100%;
+    color: var(--blue);
+}
+
+.homepage__upload-pet{
+    height: 100%;
+    background-color: var(--blue);
+    color: white;
+}
+
+.homepage__title{
+    text-align: center;
+    font-size: 230%;
+    height: 40%;
+}
+
+.homepage__text{
     font-size: 150%;
+    height: 40%;
+    text-align: center;
 }
 
 .homepage__button{
-    padding: 0.5rem;
+    background-color: var(--blue);
+    color: white;
+    border-radius: 30px;
+    font-size: 130%;
+    height: fit-content;
+    padding: 1rem;
+    outline: none;
+    border: none;
+    display: block;
     margin: auto;
+    margin-top: 1rem;
+}
+
+.upload-button{
+    background-color: white;
+    color: var(--blue);
 }
 
 .homepage__button:hover{
     cursor: pointer;
-    box-shadow: 0 0 1rem black;
+    box-shadow: 0 0 1rem var(--blue);
+}
+
+.upload-button:hover{
+    box-shadow: 0 0 1rem white;
 }
 
 .pet{
@@ -593,16 +656,327 @@ body{
 .pet__info-list{
     margin-top: 1rem;
     width: 95%;
-    margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.7rem;
+    margin: 0.5rem auto;
 }
 
-.pet__info-important{
-    margin-top: 1.5rem;
+.pet__important{
+    margin: 0.5rem auto;
 }
 
-.pet__info-description{
-    margin-top: 1.5rem;
+.pet__description{
+    margin: 0.5rem auto;
 }
+
+.create{
+    height: fit-content;
+    width: 70vw;
+    padding: 2rem;
+    box-shadow: 0 0 2rem black;
+    margin: auto;
+    border-radius: 10px;
+    position: relative;
+}
+
+.create > h2{
+    text-align: center;
+    font-size: 200%;
+}
+
+.create__form{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr 1fr 1fr 1.5fr 1.5fr;
+}
+
+.create__article{
+    height: 40%;
+}
+
+.create__button{
+    height: 20%;
+}
+
+.create__input{
+    margin: auto;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.create__input > label{
+    font-size: 150%;
+    margin-left: 1rem;
+}
+
+.create__input-text{
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    font-size: 150%;
+}
+
+.big-input-sect{
+    grid-column: span 2;
+    width: 95%;
+    height: 90%;
+}
+
+.create__big-input{
+    width: 100%;
+    height: 100%;
+}
+
+.create__images-art{
+    margin-top: 1rem;
+}
+
+.create__images{
+    margin: 1rem 0;
+    border-radius: 10px;
+    padding: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.create__submit-img{
+    margin: 0.5rem auto;
+    display: block;
+    width: fit-content;
+}
+
+.create__images figure{
+    width: 15%;
+    height: 10%;
+}
+
+.create__images img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.create__submit{
+    padding: 1rem 2rem;
+    font-size: 150%;
+    border-radius: 30px;
+    background-color: var(--blue);
+    color: white;
+    display: block;
+    width: fit-content;
+    margin: auto;
+    margin-top: 1rem;
+    max-height: 100%;
+}
+
+.create__submit:hover{
+    cursor: pointer;
+    box-shadow: 0 0 1rem black;
+}
+
+.profile__create{
+    width: 50vw;
+}
+
+.profile__create .create__form{
+    grid-template-rows: 1fr 1.5fr;
+}
+
+.close-button{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    height: 2rem;
+    width: 2rem;
+}
+
+.close-button svg{
+    width: 100%;
+    height: 100%;
+}
+
+@media(max-width: 1200px){
+    .create{
+        width: 80vw;
+    }
+}
+
+@media(max-width:1000px){
+    .main{
+        flex-direction: column;
+    }
+
+    .sidebar{
+        height: 25vh;
+        width: 100vw;
+    }
+
+    .sidebar__filters{
+        display: flex;
+        padding: 0 2rem;
+        gap: 2rem;
+    }
+
+    .sidebar__list{
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem
+    }
+
+    .sidebar__button{
+        display: none;
+    }
+
+    .sidebar__button svg{
+        transform: rotate(90deg);
+    }
+
+    .homepage__title{
+        font-size: 180%;
+    }
+
+    .homepage__banner-title{
+        font-size: 200%;
+    }
+
+    .homepage__text{
+        font-size: 120%;
+    }
+}
+
+@media(max-width: 800px){
+    .homepage__banner{
+        height: 30vh;
+    }
+
+    .homepage__banner-title{
+        width: fit-content;
+    }
+
+    .homepage__main{
+        flex-direction: column;
+    }
+
+    .homepage__animals{
+        height: fit-content;
+        padding: 1rem ;
+        width: 90%;
+        margin: auto;
+        margin-top: 1rem;
+    }
+
+    .homepage__animal-list{
+        display: none;
+    }
+    
+    .create__form{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .create__input{
+        width: 90%;
+    }
+
+    .create__images{
+        height: 7rem;
+        width: 8rem;
+    }
+
+    .create__images >figure{
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@media(max-width:600px){
+    .sidebar{
+        display: none;
+        width: 90%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        margin: 0;
+        height: fit-content;
+        padding: 0 0 1rem 0;
+        border-radius: 10px;
+    }
+
+    .sidebar__header{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .sidebar__filters{
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .sidebar__list{
+        flex-direction: column;
+    }
+
+    .filter__button{
+        display: block;
+        position: sticky;
+        z-index: 1;
+        top: 2rem;
+        left: 0.5rem;
+    }
+
+    #closeSidebar{
+        display: block;
+    }
+}
+
+@media(max-width:500px){
+    .homepage__banner-title{
+        font-size: 150%;
+    }
+
+    .homepage__main{
+        margin-top:1rem ;
+        padding: 0;
+    }
+
+    .homepage__animals{
+        width: 100%;
+    }
+}
+
+@media(max-width: 400px){
+    .petCard{
+        width: 95vw;
+    }
+
+    .petCard li{
+        font-size: 100%;
+    }
+
+    .content{
+        padding: 0;
+    }
+
+    .homepage__banner{
+        height: 25vh;
+    }
+
+    .homepage__upload-pet, .homepage__create-account{
+        padding: 3rem 1rem;
+    }
+
+    .create{
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .close-button{
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+}   

@@ -16,6 +16,7 @@ class CreatePetsImagesTable extends Migration
         Schema::create('pets_images', function (Blueprint $table) {
             $table->unsignedBigInteger('petId');
             $table->string('image');
+            $table->timestamps();
         });
     }
 

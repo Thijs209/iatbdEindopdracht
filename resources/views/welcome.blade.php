@@ -12,35 +12,24 @@
             <h1 class="homepage__banner-title">Passen Op Je Dier</h1>
         </section>
     </article>
-    <ul class="homepage__animal-list">
-        @foreach ($animals as $animal)
-            <li class="homepage__animal"><a href="/pets/{{$animal->animal}}">{{$animal->animal}}</a></li>
-        @endforeach
-    </ul>
-    <section class="homepage__cards">
-        <article class="homepage__card">
-            <section class="homepage__heading">
-                <h1 class="homepage__heading-title">Zoek huisdieren om op te passen</h1>
-            </section>
-            <div class="sep-bar"></div>
-            <section class="homepage__card-content">
-                <p class="homepage__card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. At cum quis consequatur sed magnam error ducimus quo fugit minima? Distinctio nam error itaque autem delectus laudantium nulla laboriosam non accusantium.</p>
-            </section>
-            <section class="homepage__card-button-section">
-                <button class="auth__button">Zoek Huisdieren</button>
-            </section>
+    <section class="homepage__animals">
+        <h2 class="homepage__animals-title"><a href="/pets">Zoek Dieren</a></h2>
+        <ul class="homepage__animal-list">
+            @foreach ($animals as $animal)
+                <li class="homepage__animal"><a href="/pets/{{$animal->animal}}">{{$animal->animal}}</a></li>
+            @endforeach
+        </ul>
+    </section>
+    <section class="homepage__main">
+        <article class="homepage__upload-pet">
+            <h1 class="homepage__title">Zoek iemand om op je huisdier te passen</h1>
+            <p class="homepage__text">Upload wat foto`s en informatie over je huisdier en vind in no time een oppas.</p>
+            <button class="homepage__button upload-button" onclick="window.location='/petprofile'">Zoek een oppasser</button>
         </article>
-        <article class="homepage__card">
-            <section class="homepage__heading">
-                <h1 class="homepage__heading-title">Zoek een oppasser voor jou huisdier</h1>
-            </section>
-            <div class="sep-bar"></div>
-            <section class="homepage__card-content">
-                <p class="homepage__card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. At cum quis consequatur sed magnam error ducimus quo fugit minima? Distinctio nam error itaque autem delectus laudantium nulla laboriosam non accusantium.</p>
-            </section>
-            <section class="homepage__card-button-section">
-                <button class="auth__button">Upload Huisdier</button>
-            </section>
+        <article class="homepage__create-account">
+            <h1 class="homepage__title">Word een dieren Op Passer</h1>
+            <p class="homepage__text">Laat wat foto`s van jou of je huis zien, vertel wat over jezelf en verdien een extra zakcentje door gewoon op wat dieren te passen.</p>
+            <button class="homepage__button" onclick="window.location='/account'">Wordt een oppasser</button>
         </article>
     </section>
 @endsection

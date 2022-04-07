@@ -15,4 +15,9 @@ class UserController extends Controller
             'user' => User::find($id),
         ]);
     }
+
+    public function create()
+    {
+        return view('profile.create');
+    }
 }

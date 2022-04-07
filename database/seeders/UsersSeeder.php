@@ -14,17 +14,6 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-            'name' => 'Thijs',
-            'email' => 'thijsweijers@outlook.com',
-            'password' => '123',
-            'description' => 'Ik ben Thijs en ben 19 jaar oud, ik woon op mezelf in Leiden.'
-        ]);
-        DB::table('users')->insert([
-            'name' => 'Thijs',
-            'email' => 'iets@outlook.com',
-            'password' => '123',
-            'description' => 'Ik ben Thijs en ben 19 jaar oud, ik woon op mezelf in Leiden.'
-        ]);
+        
     }
 }

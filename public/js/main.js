@@ -2,6 +2,9 @@
 const sidebarButton = document.getElementById("sidebarButton");
 const sidebar = document.getElementById("sidebar");
 const petsGrid = document.getElementById("petCardGrid");
+let folded = false;
+const filtersButton = document.getElementById("filters")
+const closeSidebar = document.getElementById("closeSidebar")
 
 //slideshow vars
 const images = document.getElementsByClassName('imagelist');
@@ -18,20 +21,31 @@ if(images.length != 0){
 //filters vars
 const animalCheckBoxList = document.getElementsByClassName('animal-filter')
 const petCards = document.getElementsByClassName('petCard');
-const priceInput = document.getElementById('price');
+const paymentInput = document.getElementById('payment');
 
 //sidebar
 if (sidebarButton != null) {
+    filtersButton.onclick = () =>{
+        filtersButton.style.display = "none"
+        sidebar.style.display = 'block'
+    }
+
+    closeSidebar.onclick = () =>{
+        sidebar.style.display = "none"
+        filtersButton.style.display = "block"
+    }
+
+    const sidebarStyle = sidebar.style 
     sidebarButton.onclick = () => {
         //if sidebar is folded
-        if (sidebar.style.marginLeft == "-19vw") {
-            sidebar.style.marginLeft = "-2rem"
-            petsGrid.style.width = "80%"
+        if (folded) {
+            sidebar.style = sidebarStyle
+            folded = false;
         }
         //if not folded
         else {
-            sidebar.style.marginLeft = "-19vw"
-            petsGrid.style.width = "100%"
+            folded = true;
+            sidebar.style.marginLeft = "-18.5rem"
         }
     }
 }
@@ -104,11 +118,14 @@ if(animalCheckBoxList.length != 0){
     }
 }
 
-if(priceInput != null){
-    priceInput.onchange = () => {
-        console.log(priceInput.value)
+if(paymentInput != null){
+    paymentInput.onchange = () => {
+        const minPayment = paymentInput.value
         for(let i = 0; i < petCards.length; i++){
-            if(priceInput.value > petCards[i].dataset.price){
+            const payment = petCards[i].dataset.payment
+            if(minPayment > payment){
+                console.log("input", paymentInput.value)
+                console.log('payment', petCards[i].dataset.payment)
                 petCards[i].style.display = "none"
             } else {
                 petCards[i].style.display ="block"
@@ -116,3 +133,4 @@ if(priceInput != null){
         }
     }
 }
+

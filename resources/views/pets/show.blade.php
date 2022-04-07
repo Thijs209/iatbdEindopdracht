@@ -4,18 +4,12 @@
 @endsection
 
 @section('content')
-{{-- <article class=""></article> --}}
-    {{-- <h1>{{$pet->petName}}</h1>
-    <img src={{$pet->image}}>
-    <p>{{$pet->petName}} is een {{$pet->petType}}</p>
-    <p>{{$pet->petName}} is van {{$pet->ownerName}}</p>
-    <p>{{$pet->description}}</p> --}}
     <section class="pet">
         <article class="pet__images">
             <section class="pet__images-column">
                 @foreach ($images as $image)
                     <figure class="pet__column-figure">
-                        <img class="pet__column-image column-images" src={{$image->image}}>
+                        <img class="pet__column-image column-images" src='/img/pets/{{$image->image}}'>
                     </figure>
                 @endforeach
             </section>
@@ -25,7 +19,7 @@
                     <path id="XMLID_222_" d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001  c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213  C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606  C255,161.018,253.42,157.202,250.606,154.389z"/></svg></button>
                 @foreach ($images as $image)
                     <figure class="pet__figure imagelist">
-                        <img class="pet__image" src="{{$image->image}}">
+                        <img class="pet__image" src="/img/pets/{{$image->image}}">
                     </figure>
                 @endforeach
             </section>        
@@ -36,7 +30,11 @@
             <ul class="pet__info-list">
                 <li class="pet__info-item">{{$pet->petType}}</li>
                 <li class="pet__info-item">Eigenaar: {{$pet->ownerName}}</li>
-                <li class="pet__info-item">Ras: {{$pet->breed}}</li>
+                @if (is_null($pet->breed))
+                    
+                @else
+                    <li class="pet__info-item">Ras: {{$pet->breed}}</li>
+                @endif
                 <li class="pet__info-item">{{$pet->startDate}} - {{$pet->endDate}}</li>
                 <li class="pet__info-item">Betaling: €{{$pet->payment}}/uur</li>
             </ul>

@@ -14,12 +14,12 @@ class CreatePetsTable extends Migration
     public function up()
     {
         Schema::create('pets', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedBigInteger('petId')->unique();
             $table->timestamps();
             $table->string('petName');
             $table->string('petType');
-            $table->string('ownerName');
-            $table->string('image');
+            $table->string('ownerName')->nullable();
+            $table->string('image')->default('/img/icons/placeholder-image.png');
             $table->string('description');
             $table->string('breed')->nullable();
             $table->date("startDate");

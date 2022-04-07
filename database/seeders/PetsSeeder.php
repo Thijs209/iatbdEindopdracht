@@ -15,6 +15,7 @@ class PetsSeeder extends Seeder
     public function run()
     {
         DB::table('pets')->insert([
+            'petId' => 1,
             'petName' => 'Casper',
             'petType' => 'Hond',
             'ownerName' => 'Thijs',
@@ -28,6 +29,7 @@ class PetsSeeder extends Seeder
         ]);
 
         DB::table('pets')->insert([
+            'petId' => 2,
             'petName' => 'Snuf',
             'petType' => 'Hond',
             'ownerName' => 'Jan',
@@ -36,10 +38,11 @@ class PetsSeeder extends Seeder
             'breed' => 'Golden Retriever',
             'startDate' => '2022-08-02',
             'endDate' => '2022-08-09',
-            'payment' => '12',
+            'payment' => '15',
         ]);
 
         DB::table('pets')->insert([
+            'petId' => 3,
             'petName' => 'Bo',
             'petType' => 'Konijn',
             'ownerName' => 'Henk',

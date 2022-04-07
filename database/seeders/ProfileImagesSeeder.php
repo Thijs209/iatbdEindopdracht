@@ -14,17 +14,6 @@ class ProfileImagesSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('profile_images')->insert([
-            'userId' => '1',
-            'image' => '/img/profiles/room.jpg'
-        ]);
-        DB::table('profile_images')->insert([
-            'userId' => '1',
-            'image' => '/img/profiles/room2.jpg'
-        ]);
-        DB::table('profile_images')->insert([
-            'userId' => '2',
-            'image' => '/img/profiles/room.jpg'
-        ]);
+
     }
 }
