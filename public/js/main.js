@@ -23,6 +23,41 @@ const animalCheckBoxList = document.getElementsByClassName('animal-filter')
 const petCards = document.getElementsByClassName('petCard');
 const paymentInput = document.getElementById('payment');
 
+//close vars
+const dismiss = document.getElementById('dismiss');
+const saved = document.getElementById('saved');
+
+if (dismiss !=null){
+    dismiss.onclick = () => {
+        saved.style.display = 'none'
+    }
+}
+
+//respond vars
+const respond = document.getElementById('respond');
+const confirme = document.getElementById('confirm')
+const overlay = document.getElementById('overlay');
+const yes = document.getElementById('yes')
+const no = document.getElementById('no')
+
+//respond
+if(respond !=null){
+    confirme.style.display = 'none'
+    respond.onclick = () =>{
+        confirme.style.display = 'flex'
+        overlay.style.display = 'block'
+    }
+    
+    yes.onclick = () =>{
+
+    }
+
+    // no.onclick = () =>{
+    //     confirme.style.display = 'none'
+    //     overlay.style.display = 'none'
+    // }
+}
+
 //sidebar
 if (sidebarButton != null) {
     filtersButton.onclick = () =>{

@@ -15,6 +15,7 @@ class AddForeignKeyToPetsTable extends Migration
     {
         Schema::table('pets', function (Blueprint $table) {
             $table->foreign('petType')->references('animal')->on('animals');
+            $table->foreign('ownerId')->references('id')->on('users');
         });
     }
 
@@ -26,6 +27,7 @@ class AddForeignKeyToPetsTable extends Migration
     public function down()
     {
         Schema::table('pets', function (Blueprint $table) {
+            $table->dropForeign('pets_ownerId_foreign');
             $table->dropForeign('pets_petType_foreign');
         });
     }

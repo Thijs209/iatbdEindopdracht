@@ -14,11 +14,11 @@
     </article>
     <section class="homepage__animals">
         <h2 class="homepage__animals-title"><a href="/pets">Zoek Dieren</a></h2>
-        <ul class="homepage__animal-list">
+        {{-- <ul class="homepage__animal-list">
             @foreach ($animals as $animal)
                 <li class="homepage__animal"><a href="/pets/{{$animal->animal}}">{{$animal->animal}}</a></li>
             @endforeach
-        </ul>
+        </ul> --}}
     </section>
     <section class="homepage__main">
         <article class="homepage__upload-pet">

@@ -23,17 +23,38 @@ Route::get('/pets/show/{id}', [\App\Http\Controllers\PetController::class, 'show
 Route::get('/pets/{Animal}',  [\App\Http\Controllers\PetController::class, 'index']);
 Route::get('/pets', [\App\Http\Controllers\PetController::class, 'index']);
 
-Route::get('/profile/{id}', [\App\Http\Controllers\UserController::class, 'show']);
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('logout', function (){
+        auth()->logout();
+        Session()->flush();
+        return Redirect::to('/');
+    })->name('logout');
+
+    Route::get('/profile', [\App\Http\Controllers\UserController::class, 'show']);
+    Route::get('/profile/{id}', [\App\Http\Controllers\UserController::class, 'showto']);
+
     Route::get('/petprofile', [\App\Http\Controllers\PetController::class, 'create']);
-    Route::post('/petprofile/uploadimages/{id}', [\App\Http\Controllers\PetController::class, 'uploadImages']);
+    Route::get('/petprofile/{id}', [\App\Http\Controllers\PetController::class, 'edit']);
     Route::get('/petprofile/images/{id}', [\App\Http\Controllers\PetController::class, 'createImages']);
-    Route::get('/petprofile/images/{id}/upload', [\App\Http\Controllers\PetController::class, 'uploadImages']);
-    Route::post('/pets', [\App\Http\Controllers\PetController::class, 'store']);
+    Route::post('/petprofile/uploadimages/{id}', [\App\Http\Controllers\PetController::class, 'uploadImages']);
+    Route::get('/petprofile/images/saved/{id}', [\App\Http\Controllers\PetController::class, 'created']);
+    Route::post('/pets/create/{id}', [\App\Http\Controllers\PetController::class, 'store']);
     
     Route::get('/account', [\App\Http\Controllers\UserController::class, 'create']);
-    Route::post('/account/uploadimages', [\App\Http\Controllers\UserController::class, 'upload']);
+    Route::post('/account/create', [\App\Http\Controllers\UserController::class, 'store']);
+    Route::get('/account/images/{id}', [\App\Http\Controllers\UserController::class, 'createImages']);
+    Route::post('/account/uploadimages/{id}', [\App\Http\Controllers\UserController::class, 'uploadImages']);
+    Route::get('/account/images/saved/{id}', [\App\Http\Controllers\UserController::class, 'created']);
+
+    Route::post('/pets/respond/{id}', [\App\Http\Controllers\PetController::class, 'respond']);
+    Route::get('/pets/show/sent/{id}', [\App\Http\Controllers\PetController::class, 'sent']);
+
+    Route::get('/messages',[\App\Http\Controllers\MessageController::class, 'index']);
+    Route::get('/messages/accept/{id}', [\App\Http\Controllers\MessageController::class, 'accept']);
+
+    Route::get('/review/{id}', [\App\Http\Controllers\UserController::class, 'review']);
+    Route::post('/review/post/{id}', [\App\Http\Controllers\UserController::class, 'storeReview']);
 });
 
 require __DIR__.'/auth.php';

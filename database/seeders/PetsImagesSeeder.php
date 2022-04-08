@@ -14,19 +14,19 @@ class PetsImagesSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('pets_images')->insert([
-            'petId' => '1',
-            'image' => '/img/pets/casper.jpg'
-        ]);
+        // DB::table('pets_images')->insert([
+        //     'petId' => '1',
+        //     'image' => '/img/pets/casper.jpg'
+        // ]);
 
-        DB::table('pets_images')->insert([
-            'petId' => '1',
-            'image' => '/img/pets/casper_2.jpg'
-        ]);
+        // DB::table('pets_images')->insert([
+        //     'petId' => '1',
+        //     'image' => '/img/pets/casper_2.jpg'
+        // ]);
 
-        DB::table('pets_images')->insert([
-            'petId' => '1',
-            'image' => '/img/pets/casper_3.jpg'
-        ]);
+        // DB::table('pets_images')->insert([
+        //     'petId' => '1',
+        //     'image' => '/img/pets/casper_3.jpg'
+        // ]);
     }
 }

@@ -19,6 +19,7 @@ class CreatePetsTable extends Migration
             $table->string('petName');
             $table->string('petType');
             $table->string('ownerName')->nullable();
+            $table->unsignedBigInteger('ownerId');
             $table->string('image')->default('/img/icons/placeholder-image.png');
             $table->string('description');
             $table->string('breed')->nullable();
