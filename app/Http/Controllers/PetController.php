@@ -165,21 +165,4 @@ class PetController extends Controller
         }
         return redirect('/petprofile/images/saved/'.$petId);
     }
-
-    // public function deleteImage(Request $request, \App\Models\Sitter $sitter){
-    //     $data = json_decode(\App\Models\Sitter::where('user_id', Auth::user()->id)->get()->first()->images, true);
-    //     $file_path = 'img/sitterImages/';
-    //     $index = 0;
-
-    //     foreach ($data as $image) {
-    //         if($request->image == $image){
-    //             \array_splice($data, $index, 1);
-    //             unlink($file_path.$image);
-    //         }
-    //         $index++;
-    //     }
-    //     $sitter::where('user_id', Auth::user()->id)->update(['images' => json_encode($data)]);
-
-    //     return redirect('/account');
-    // }
 }
