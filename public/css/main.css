@@ -498,11 +498,11 @@ label{
 }
 
 .homepage__main{
-    height: 50vh;
+    height: 65vh;
     width: 100%;
     display: flex;
     gap: 2rem;
-    padding: 2rem;
+    padding: 2rem 0;
 }
 
 .homepage__create-account, .homepage__upload-pet{
@@ -534,6 +534,7 @@ label{
     font-size: 150%;
     height: 40%;
     text-align: center;
+    margin-bottom: 1rem;
 }
 
 .homepage__button{
@@ -547,7 +548,6 @@ label{
     border: none;
     display: block;
     margin: auto;
-    margin-top: 1rem;
 }
 
 .upload-button{
@@ -1121,8 +1121,13 @@ h3{
         width: fit-content;
     }
 
+    .homepage__title{
+        margin-bottom: 1rem;
+    }
+
     .homepage__main{
         flex-direction: column;
+        height: auto;
     }
 
     .homepage__animals{
