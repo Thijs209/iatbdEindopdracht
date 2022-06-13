@@ -80,6 +80,7 @@ class UserController extends Controller
         $user->name = $request->input('name');
         $user->description = $request->input('description');
         $user->city = $request->input('city');
+        $user->oppasser = 1;
 
         try{
             $user->save();

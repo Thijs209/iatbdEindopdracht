@@ -37,7 +37,7 @@
                     @endif>
                 </section>
                 <section class="create__input">
-                    <label for="payment">Betaling</label>
+                    <label for="payment">Betaling in €/uur</label>
                     <input required class="create__input-text" type="number" name="payment" id="payment"
                     @if (!empty($pet))
                         value="{{$pet->payment}}"
@@ -59,17 +59,11 @@
                 </section>
                 <section class="create__input big-input-sect">
                     <label for="important">Belangrijke punten</label>
-                    <textarea class="create__input-text create__big-input" type="text" name="important" id="important">@if (!empty($pet))
-                        {{$pet->important}}
-                    @endif</textarea>
+                    <textarea class="create__input-text create__big-input" type="text" name="important" id="important">@if (!empty($pet)){{$pet->important}}@endif</textarea>
                 </section>
                 <section class="create__input big-input-sect">
                     <label for="description">Beschrijving</label>
-                    <textarea class="create__input-text create__big-input" type="text" name="description" id="description">
-                        @if (!empty($pet))
-                        {{$pet->description}}
-                    @endif
-                    </textarea>
+                    <textarea class="create__input-text create__big-input" type="text" name="description" id="description">@if (!empty($pet)){{$pet->description}}@endif</textarea>
                 </section>
             </section>
         </article>

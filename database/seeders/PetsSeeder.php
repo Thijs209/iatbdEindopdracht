@@ -14,43 +14,46 @@ class PetsSeeder extends Seeder
      */
     public function run()
     {
-        // DB::table('pets')->insert([
-        //     'petId' => 1,
-        //     'petName' => 'Casper',
-        //     'petType' => 'Hond',
-        //     'ownerName' => 'Thijs',
-        //     'image' => '/img/pets/casper.jpg',
-        //     'description' => 'Dit is Casper.',
-        //     'breed' => 'Epagnol Breton',
-        //     'startDate' => '2022-08-02',
-        //     'endDate' => '2022-08-09',
-        //     'payment' => '20',
-        //     'important' => 'Zij ogen ontsteken snel'
-        // ]);
+        DB::table('pets')->insert([
+            'petId' => 4,
+            'ownerId' => 1,
+            'petName' => 'Casper',
+            'petType' => 'Hond',
+            'ownerName' => 'Thijs',
+            'image' => '/img/pets/casper.jpg',
+            'description' => 'Dit is Casper.',
+            'breed' => 'Epagnol Breton',
+            'startDate' => '2022-08-02',
+            'endDate' => '2022-08-09',
+            'payment' => '20',
+            'important' => 'Zij ogen ontsteken snel'
+        ]);
 
-        // DB::table('pets')->insert([
-        //     'petId' => 2,
-        //     'petName' => 'Snuf',
-        //     'petType' => 'Hond',
-        //     'ownerName' => 'Jan',
-        //     'image' => '/img/pets/defie.jpg',
-        //     'description' => 'Dit si defie.',
-        //     'breed' => 'Golden Retriever',
-        //     'startDate' => '2022-08-02',
-        //     'endDate' => '2022-08-09',
-        //     'payment' => '15',
-        // ]);
+        DB::table('pets')->insert([
+            'petId' => 5,
+            'ownerId' => 1,
+            'petName' => 'Snuf',
+            'petType' => 'Hond',
+            'ownerName' => 'Jan',
+            'image' => '/img/pets/defie.jpg',
+            'description' => 'Dit si defie.',
+            'breed' => 'Golden Retriever',
+            'startDate' => '2022-08-02',
+            'endDate' => '2022-08-09',
+            'payment' => '15',
+        ]);
 
-        // DB::table('pets')->insert([
-        //     'petId' => 3,
-        //     'petName' => 'Bo',
-        //     'petType' => 'Konijn',
-        //     'ownerName' => 'Henk',
-        //     'image' => '/img/pets/bo.jpg',
-        //     'description' => 'Dit is Bo.',
-        //     'startDate' => '2022-08-02',
-        //     'endDate' => '2022-08-09',
-        //     'payment' => '6',
-        // ]);
+        DB::table('pets')->insert([
+            'petId' => 6,
+            'ownerId' => 1,
+            'petName' => 'Bo',
+            'petType' => 'Konijn',
+            'ownerName' => 'Henk',
+            'image' => '/img/pets/bo.jpg',
+            'description' => 'Dit is Bo.',
+            'startDate' => '2022-08-02',
+            'endDate' => '2022-08-09',
+            'payment' => '6',
+        ]);
     }
 }

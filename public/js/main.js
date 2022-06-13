@@ -5,6 +5,7 @@ const petsGrid = document.getElementById("petCardGrid");
 let folded = false;
 const filtersButton = document.getElementById("filters")
 const closeSidebar = document.getElementById("closeSidebar")
+const overlay = document.getElementById('overlay');
 
 //slideshow vars
 const images = document.getElementsByClassName('imagelist');
@@ -36,7 +37,6 @@ if (dismiss !=null){
 //respond vars
 const respond = document.getElementById('respond');
 const confirme = document.getElementById('confirm')
-const overlay = document.getElementById('overlay');
 const yes = document.getElementById('yes')
 const no = document.getElementById('no')
 
@@ -63,11 +63,13 @@ if (sidebarButton != null) {
     filtersButton.onclick = () =>{
         filtersButton.style.display = "none"
         sidebar.style.display = 'block'
+        overlay.style.display = "block"
     }
 
     closeSidebar.onclick = () =>{
         sidebar.style.display = "none"
         filtersButton.style.display = "block"
+        overlay.style.display = "none"
     }
 
     const sidebarStyle = sidebar.style 
@@ -116,7 +118,8 @@ if (columnImages.length!=0){
 
 function changeColumnFocus(previous){
     columnImages[previous].style.border = ""
-    columnImages[imageDisplay].style.border = "black 3px solid"
+    columnImages[imageDisplay].style.borderTop = "black 3px solid"
+    columnImages[imageDisplay].style.borderBottom = "black 3px solid"
 }
 
 function nextPicture(move, imageList, direction){

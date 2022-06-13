@@ -20,7 +20,7 @@ class CreateResponsesTable extends Migration
             $table->unsignedBigInteger('ownerId');
             $table->unsignedBigInteger('petId');
             $table->boolean('accepted')->default(false);
-            $table->string('message')->nullable();
+            $table->text('message')->nullable();
             $table->timestamps();
         });
     }

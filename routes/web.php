@@ -23,6 +23,7 @@ Route::get('/pets/show/{id}', [\App\Http\Controllers\PetController::class, 'show
 Route::get('/pets/{Animal}',  [\App\Http\Controllers\PetController::class, 'index']);
 Route::get('/pets', [\App\Http\Controllers\PetController::class, 'index']);
 
+Route::get('/back', [\App\Http\Controllers\routeController::class, 'backToPrevious']);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('logout', function (){

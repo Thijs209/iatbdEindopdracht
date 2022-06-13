@@ -29,7 +29,8 @@ label{
 }
 
 .content{
-    padding: 3rem 2rem;
+    padding: 3rem;
+    width: 100%;
 }
 
 .header{
@@ -39,7 +40,6 @@ label{
 
 .header__heading{
     height: 100%;
-    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: space-between; 
@@ -49,7 +49,7 @@ label{
     height: 90%;
     width: 10%;
     display: flex;
-    margin-left: 1.5rem;
+    margin-left: 3rem;
 }
 
 .header__logo > a{
@@ -66,8 +66,6 @@ label{
 }
 
 .header__navbar{
-    background-color: rgb(243, 243, 243);
-    width: fit-content;
     height: 70%;
     padding: 1rem 3rem 1rem 1rem;
     display: flex;
@@ -108,7 +106,7 @@ label{
 }
 
 .sidebar{
-    margin-left: -2rem;
+    margin-left: -3rem;
     margin-top: -3rem;
     margin-bottom: -3rem;
     height: 100vh;
@@ -149,6 +147,23 @@ label{
     width: 100%;
 }
 
+.sidebar__checkbox-filter-section{
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sidebar__filter-label{
+    font-size: 1.5rem;
+}
+
+.checkbox{
+    width: 2rem;
+    height: 100%;
+    border-radius: 10px;
+}
+
 .sidebar__text-input-section{
     display: flex;
     width: 8rem;
@@ -168,7 +183,7 @@ label{
     display: flex;
     flex-direction: column;
     margin-top: 0.5rem;
-    gap: 0.5rem;
+    gap: 0.8rem;
 }
 
 .sidebar__filter{
@@ -204,7 +219,7 @@ label{
 .petCard{
     transition: 0.3s;
     list-style: none;
-    height: 50vh;
+    height: 27rem;
     width: 20rem;
     box-shadow: 0 0 1rem #000000b4;
     border-bottom-left-radius: 10%;
@@ -337,10 +352,15 @@ label{
 .profile__info{
     grid-column: span 2;
     height: fit-content;
+    width: 100%;
+}
+
+.bold{
+    font-weight: 600;
 }
 
 .profile__title{
-    text-align: center;
+    /* text-align: center; */
     font-size: 150%;
 }
 
@@ -393,7 +413,7 @@ label{
     background-color: var(--blue);
     color: white;
     width: fit-content;
-    margin: auto;
+    margin: 1rem auto;
     padding: 1rem 2rem;
     border-radius: 25px;
     outline: none;
@@ -402,7 +422,7 @@ label{
 }
 
 .auth__button:hover{
-    box-shadow: 0 0 1rem black;
+    box-shadow: 0 0 1rem var(--blue);
     cursor: pointer;
 }
 
@@ -498,7 +518,6 @@ label{
 }
 
 .homepage__main{
-    height: 65vh;
     width: 100%;
     display: flex;
     gap: 2rem;
@@ -511,15 +530,16 @@ label{
     width: 100%;
     box-shadow: 0 0 2rem black;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .homepage__create-account{
-    height: 100%;
     color: var(--blue);
 }
 
 .homepage__upload-pet{
-    height: 100%;
     background-color: var(--blue);
     color: white;
 }
@@ -527,14 +547,11 @@ label{
 .homepage__title{
     text-align: center;
     font-size: 230%;
-    height: 40%;
 }
 
 .homepage__text{
     font-size: 150%;
-    height: 40%;
     text-align: center;
-    margin-bottom: 1rem;
 }
 
 .homepage__button{
@@ -547,7 +564,7 @@ label{
     outline: none;
     border: none;
     display: block;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .upload-button{
@@ -574,14 +591,14 @@ label{
     justify-items: center;
 }
 
-.pet__images{
+.slideshow__images{
     grid-column: span 3;
     width: 100%;
     height: 60vh;
     display: flex;
 }
 
-.pet__big-images{
+.slideshow__big-images{
     position: relative;
     width: 85%;
 }
@@ -622,25 +639,25 @@ label{
     right: 0;
 }
 
-.pet__images-column{
+.slideshow__images-column{
     width: 15%;
-    gap: 0.5rem;
     display: grid;
     grid-template-columns: 100%;
     grid-auto-rows: 18%;
     overflow-y: scroll;
+    border: 3px black solid;
 }
 
-.pet__images-column{
+.slideshow__images-column{
     cursor: pointer;
 }
 
-.pet__column-figure{
+.slideshow__column-figure{
     width: 100%;
     height: 100%;
 }
 
-.pet__column-image{
+.slideshow__column-image{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -729,6 +746,7 @@ label{
 .create__big-input{
     width: 100%;
     height: 100%;
+    padding: 1rem;
 }
 
 .create__images-art{
@@ -792,6 +810,14 @@ label{
     width: 50vw;
 }
 
+.center-text{
+    text-align: center;
+}
+
+.margin-top{
+    margin-top: 1rem;
+}
+
 .profile__create .create__form{
     grid-template-rows: 1fr 1.5fr;
 }
@@ -813,6 +839,13 @@ label{
     height: 100%;
 }
 
+.edit__button{
+    position: absolute;
+    top: 18vh;
+    right: 3rem;
+    box-shadow: 0 0 0.5rem var(--blue);
+}
+
 .back-button{
     position: absolute;
     left: 1rem;
@@ -830,8 +863,12 @@ label{
     height: 100%;
 }
 
+.white-text{
+    color: white;
+}
+
 .create__saved{
-    background-color: rgb(53, 255, 53);
+    background-color: var(--blue);
     width: fit-content;
     padding: 0.5rem 1rem;
     border-radius: 30px;
@@ -851,7 +888,7 @@ label{
 }
 
 .center{
-    margin: auto;
+    margin: inherit auto;
     display: block;
     text-decoration: none;
 }
@@ -868,16 +905,17 @@ label{
 
 .overlay{
     display: none;
-    position: absolute;
+    position: fixed;
     width: 100vw;
     height: 100vh;
     top: 0;
+    left: 0;
     background-color: rgba(0, 0, 0, 0.468);
 }
 
 .reviews{
     display: flex;
-    margin: auto;
+    margin: 1rem auto;
     justify-content: space-evenly;
 }
 
@@ -961,6 +999,7 @@ label{
     border-top-right-radius: 10px;
 }
 
+
 .messages__list{
     display: flex;
     flex-direction: column;
@@ -968,10 +1007,16 @@ label{
     padding: 1rem;
 }
 
+.messages__sender{
+    flex-basis: 0;
+}
+
 .messages__message{
     display: grid;
     grid-template-columns: 20% 55% 20%;
     gap: 2.5%;
+    justify-items: center;
+    align-items: center;
 }
 
 .messages__button{
@@ -979,10 +1024,12 @@ label{
     color: white;
     outline: none;
     border: none;
-    padding: 1rem 0;
+    padding: 1rem ;
     font-size: 130%;
     border-radius: 30px;
     text-align: center;
+    flex-basis: 150;
+    flex-grow: 2;
 }
 
 .accepted{
@@ -1025,8 +1072,16 @@ h3{
 }
 
 @media(max-width:1000px){
+    .header__logo{
+        margin-left: 1rem;
+    }
+
     .messages{
         width: 100%;
+    }
+
+    .messages__button{
+        margin: 0 1rem;
     }
 
     .main{
@@ -1039,14 +1094,20 @@ h3{
     }
 
     .sidebar{
-        height: 25vh;
+        height: fit-content;
         width: 100vw;
+        border-bottom-left-radius: 10px;
+        padding-bottom: 1rem;
     }
 
     .sidebar__filters{
         display: flex;
-        padding: 0 2rem;
+        padding: 0 1rem;
         gap: 2rem;
+    }
+
+    .sidebar__text-input-section{
+        margin: 0 0.5rem;
     }
 
     .sidebar__list{
@@ -1074,6 +1135,15 @@ h3{
     .homepage__text{
         font-size: 120%;
     }
+
+    .edit__button{
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .top-margin{
+        margin-top: 4rem;
+    }
 }
 
 @media(max-width: 800px){
@@ -1098,16 +1168,16 @@ h3{
         width: 80vw;
     }
 
-    .pet__images{
+    .slideshow__images{
         flex-direction: column-reverse;
         height: fit-content;
     }
 
-    .pet__big-images{
+    .slideshow__big-images{
         width: 100%;
     }
 
-    .pet__images-column{
+    .slideshow__images-column{
         width: 100%;
         grid-template-columns: repeat(20,18%) ;
         grid-template-rows: 100%;
@@ -1133,7 +1203,6 @@ h3{
     .homepage__animals{
         height: fit-content;
         padding: 1rem ;
-        width: 90%;
         margin: auto;
         margin-top: 1rem;
     }
@@ -1182,7 +1251,7 @@ h3{
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: 1;
+        z-index: 4;
         margin: 0;
         height: fit-content;
         padding: 0 0 1rem 0;
@@ -1203,11 +1272,16 @@ h3{
         flex-direction: column;
     }
 
+    .main{
+        gap: 2rem;
+    }
+
     .filter__button{
+        /* margin-top: 2rem; */
         display: block;
         position: sticky;
         z-index: 1;
-        top: 2rem;
+        top: 1rem;
         left: 0.5rem;
     }
 
@@ -1226,16 +1300,27 @@ h3{
     }
 
     .homepage__main{
-        margin-top:1rem ;
-        padding: 0;
+        padding: 2rem 0;
     }
 
     .homepage__animals{
         width: 100%;
     }
+
+    .create{
+        padding: 2rem 0.5rem;
+    }
 }
 
 @media(max-width: 400px){
+    .top-margin{
+        margin-top:7rem;
+    }
+
+    .filter__button{
+        margin-top: 2rem;
+    }
+
     .header__navbar{
         gap: 1rem;
         padding: 1rem;
@@ -1249,7 +1334,7 @@ h3{
         grid-template-columns: 1fr;
     }
 
-    .pet__images-column{
+    .slideshow__images-column{
         height: 4rem;
         grid-template-columns: repeat(20,25%) ;
     }
@@ -1294,5 +1379,9 @@ h3{
     .close-button{
         height: 1.5rem;
         width: 1.5rem;
+    }
+
+    .profile__info{
+        padding: 0.5rem;
     }
 }   
